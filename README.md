@@ -227,13 +227,6 @@ This project demonstrates:
 - Integration with Notion or Airtable
 
 ---
-
-# 📄 License
-
-This project is licensed under the MIT License.
-
----
-
 # 🙌 Acknowledgements
 
 - n8n
@@ -241,7 +234,10 @@ This project is licensed under the MIT License.
 - Telegram Bot API
 
 ---
+# 📄 License
 
-## ⭐ About
+This project is licensed under the MIT License.
 
-A lightweight website uptime monitoring workflow built with **n8n** that periodically checks website availability, logs HTTP status results to Google Sheets, and sends Telegram alerts whenever a website becomes unavailable.
+---
+
+
