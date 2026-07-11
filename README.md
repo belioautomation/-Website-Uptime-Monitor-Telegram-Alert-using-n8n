@@ -1,24 +1,24 @@
 # 🌐 Website Uptime Monitor & Telegram Alert using n8n
 
-A lightweight website monitoring workflow built with **n8n**. This automation periodically checks whether a website is online, records the status in Google Sheets, and instantly sends a Telegram notification whenever the website becomes unavailable.
+A lightweight website monitoring workflow built with **n8n**. This workflow automatically checks whether a website is online at scheduled intervals, records the status in Google Sheets, and sends instant Telegram alerts whenever the website becomes unavailable.
 
-Designed as part of my **30-Day n8n Automation Portfolio**, this project demonstrates API monitoring, conditional workflow logic, automated logging, and real-time notifications.
+Built as part of my **30-Day n8n Automation Portfolio**, this project demonstrates scheduled automation, HTTP monitoring, conditional workflow logic, automated logging, and real-time notifications.
 
 ---
 
-# 📌 Features
+## 📌 Features
 
-- 🌐 Automatically monitors website availability
+- 🌐 Monitors website availability automatically
 - ⏰ Runs on a scheduled interval
 - 📡 Checks website HTTP status codes
-- 📊 Logs every uptime check to Google Sheets
+- 📊 Logs uptime results to Google Sheets
 - 🚨 Sends Telegram alerts when a website is offline
 - 📈 Maintains a historical uptime log
-- 🆓 Uses only free services
+- ⚡ Fully automated workflow
 
 ---
 
-# 🛠 Technologies Used
+## 🛠️ Technologies Used
 
 - n8n
 - Schedule Trigger
@@ -29,7 +29,7 @@ Designed as part of my **30-Day n8n Automation Portfolio**, this project demonst
 
 ---
 
-# 📂 Workflow
+## 📂 Workflow
 
 ```text
 Schedule Trigger
@@ -52,9 +52,9 @@ Google Sheets Google Sheets
 
 ---
 
-# ⚙ Workflow Explanation
+## ⚙️ Workflow Explanation
 
-## 1. Schedule Trigger
+### 1. Schedule Trigger
 
 Automatically starts the workflow at a fixed interval.
 
@@ -64,78 +64,67 @@ Configuration:
 
 ---
 
-## 2. HTTP Request
+### 2. HTTP Request
 
-Sends a GET request to the target website and retrieves its HTTP response.
+Sends an HTTP GET request to the target website and retrieves its response.
 
 Configuration:
 
 - Method: GET
 - Authentication: None
-- Response Format: JSON
-- Include Response Headers and Status: Enabled
+- Include Response Status: Enabled
 - Never Error: Enabled
 
 Example Website:
 
-```
-https://www.github.com
+```text
+https://github.com
 ```
 
 ---
 
-## 3. IF Node
+### 3. IF Node
 
 Checks whether the website is online.
 
 Condition:
 
-```
+```text
 Status Code == 200
 ```
 
 If **True**
 
-- Save the result to the **Online Log** sheet.
+- Save the result to the **Online Log**
 
 If **False**
 
-- Save the result to the **Offline Log** sheet.
-- Send a Telegram notification.
+- Save the result to the **Offline Log**
+- Send a Telegram notification
 
 ---
 
-## 4. Google Sheets (Online Log)
+### 4. Google Sheets
+
+Stores all website monitoring results.
+
+**Online Log**
 
 Stores successful uptime checks.
 
-Example:
-
-| Date | Website | Status | HTTP Code |
-|------|----------|--------|-----------|
-| 2026-07-03 09:30 | https://github.com | Online | 200 |
-
----
-
-## 5. Google Sheets (Offline Log)
+**Offline Log**
 
 Stores failed website checks.
 
-Example:
-
-| Date | Website | Status | HTTP Code |
-|------|----------|--------|-----------|
-| 2026-07-03 10:45 | https://github.com | Offline | 503 |
-
 ---
 
-## 6. Telegram
+### 5. Telegram
 
 Sends an alert whenever the monitored website becomes unavailable.
 
 Example:
 
-```
+```text
 🚨 Website Offline Alert
 
 🌐 Website:
@@ -150,19 +139,19 @@ Offline
 🕒 Checked:
 2026-07-03 10:45
 
-🤖 Monitored automatically by n8n.
+🤖 Monitored automatically using n8n.
 ```
 
 ---
 
-# 📊 Google Sheets Structure
+## 📊 Google Sheets Structure
 
 | Date | Website | Status | HTTP Code |
 |------|----------|--------|-----------|
 
 ---
 
-# 📁 Repository Structure
+## 📁 Repository Structure
 
 ```text
 Website-Uptime-Monitor/
@@ -178,14 +167,11 @@ Website-Uptime-Monitor/
 │   ├── offline-sheet.png
 │   ├── telegram-alert.png
 │   └── workflow-execution.png
-│
-└── assets/
-    └── sample-output.json
 ```
 
 ---
 
-# 📷 Screenshots
+## 📷 Screenshots
 
 Include the following screenshots:
 
@@ -199,45 +185,47 @@ Include the following screenshots:
 
 ---
 
-# 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 This project demonstrates:
 
-- Website monitoring
-- HTTP Request integration
-- HTTP status code validation
-- Conditional workflow logic
-- Google Sheets automation
-- Telegram notifications
-- Scheduled automation
-- Real-time uptime monitoring
+- Website Monitoring
+- HTTP Request Integration
+- HTTP Status Code Validation
+- Conditional Workflow Logic
+- Google Sheets Automation
+- Telegram Notifications
+- Scheduled Workflow Automation
+- Real-Time Uptime Monitoring
 
 ---
 
-# 🚀 Possible Improvements
+## 🚀 Future Improvements
 
 - Monitor multiple websites
 - Email notifications
-- Discord notifications
-- Slack notifications
+- Slack and Discord integration
 - Website response time tracking
 - Downtime analytics dashboard
 - Automatic incident reports
-- Daily uptime summary
+- Daily uptime summaries
 - Integration with Notion or Airtable
 
 ---
-# 🙌 Acknowledgements
 
-- n8n
-- Google Sheets API
-- Telegram Bot API
-
----
-# 📄 License
+## 📜 License
 
 This project is licensed under the MIT License.
 
 ---
 
+## 👨‍💻 Author
 
+**Belio C. Sinangote**
+
+BS Information Technology Student  
+Cebu Technological University (CTU)
+
+**GitHub:** https://github.com/belioautomation
+
+This project is part of my **30-Day n8n Automation Portfolio**, showcasing practical workflow automation using **n8n**, **HTTP APIs**, and **website monitoring**.
